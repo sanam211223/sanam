@@ -1,0 +1,43 @@
+#SANAMothsava
+A golden Love Story
+
+Welcome Text:
+-------------
+"Two souls, one path, infinite love."
+            
+You are invited!
+            
+In a world where love found its perfect match, Sanam invites you to celebrate their journey.
+            
+"Love is sweeter when shared." Your presence will add an extra sprinkle of joy. Please be invited to be part of the magic.
+            
+With love,
+            
+Sanam
+
+Vertical Video Section
+
+EVENTS:
+-------
+ - Mehendi & Sangeet 						-> Time -> Venue
+ - Haldi Rasam							-> -----||------
+ - Bale shastra & Engagement & Ring Ceremony & Reception 	-> -----||------
+ - Muhurtam & Wedding Reception					-> -----||------
+
+ - Reception: Join us on the evening of 20th December as we kick off the festivities with laughter, dance, and merriment.  
+ - Wedding: On the 21st of December, we say "I do" under the boundless sky, amidst the opulent grandeur of Sarji surrounded by serene beauty of Malenadu"
+
+
+Music: https://youtu.be/QrRh_bqfZco?si=oX-jftkJeSuitmfg
+
+Changes: Font-Family, Location, button to reload the gallery, Timer (it should be sticky), start playing music when user clicks on stamp, when video starts playing, global audio should stop
+
+Click on the stamp (along with blinking animation)
+
+Change the Website Logo
+
+Low Prio: Translation
+
+
+
+video, events

@@ -1,0 +1,754 @@
+:root {
+    --font-family: 'Grandiflora One', serif;
+    --poppins:'Poppins', sans-serif;
+    --Play-fair:'Playfair Display', serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+      
+    
+}
+
+.circle {
+    width: 180px;
+    height: 180px;
+    border: 10px dotted transparent; /* Dotted stroke with the desired color */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: transparent; /* Transparent fill */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateCircle 20s linear infinite,
+       blinkBorder 0.2s alternate infinite; /* Add blinking animation */
+}
+
+@keyframes rotateCircle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes blinkBorder {
+    0% {
+        border-color: transparent; /* Start with the desired color */
+    }
+    100% {
+        border-color: white; /* Change to the blinking color */
+    }
+}
+
+/* .transparent-circle {
+    background-color: transparent;
+    border-color: transparent;
+} */
+
+
+#curtain-container {        
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#curtain-left, #curtain-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #45010c;
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust as needed */
+    transition: transform 1s ease-in-out;
+    background-size: contain;
+}
+
+#curtain-left {
+    left: 0;
+    background-image: url('L.png'); /* Set the left curtain background image */
+    background-position: right center; /* Centered Right */
+}
+
+#curtain-right {
+    right: 0;
+    background-image: url('R.png'); /* Set the right curtain background image */
+    background-position: left center; /* Centered Left */
+}
+
+#revealButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border: none;
+    z-index: 2;
+    background-color: transparent;
+    opacity: 0;
+}
+
+#revealButton img {
+    width: 100px; /* Adjust the image size as needed */
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Set your desired webpage background color */
+    display: none;
+    z-index: 1;
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+    background-color:#380C20;
+    color: wheat;
+}
+
+@media screen and (max-width: 768px) {
+    #curtain-left, #curtain-right {
+        background-size: contain; /* Adjust as needed for mobile view */
+        background-position: center center; /* Center the background image */
+    }
+
+    #content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white; /* Set your desired webpage background color */
+        display: none;
+        z-index: 1;
+    }        
+
+}
+
+
+/* Navigation Bar Styles */
+#navbar {
+    display: inline-flex;
+    padding: 20px 20px;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    background: rgba(56, 12, 32, 0.85);
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.67);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+#navbar img {
+    width: 30px; /* Adjust the image size as needed */
+}
+
+#navbar span {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 10px;
+    font-family: var(--font-family);
+}
+
+.responsive-div {
+    position: relative; /* Add this line to make it a reference for absolute positioning */
+    width: 100%;
+    height: 100vh;
+    background-image: url('Landing_Page.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.text-container {
+    /* position: absolute; Add this line for absolute positioning */
+    /* bottom: 20px; Adjust the distance from the bottom as needed */
+    /* text-align: center; */
+    /* z-index: 2; Add a higher z-index to overlay it on top of the image */
+    /* text-align: center; */
+    /* color: #fff; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Vertically center-align all content */
+    text-align: center; /* Center-align text */
+    background-color: #380C20;
+
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+}
+
+.welcome-text {
+    padding: 20px 50px;
+    justify-content: center;
+    align-items: center;
+    /* gap: 4px; */
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    background: rgba(245, 222, 179, 0.65);
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.67);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    width: 50%;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    color: #380C20;
+    /* font-family: var(--font-family); */
+}
+
+.welcome-message p {
+    
+    font-family: var(--Play-fair);
+    font-size: 24px;
+    /* font-weight: 100px; */
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+
+#countdown-timer {
+    font-size: 35px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    background: rgba(56, 12, 32, 0.85);
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.67);
+    backdrop-filter: blur(2px);
+    position: relative;
+    overflow: hidden;
+    /* Add the following lines */
+    padding: 10px 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px; /* Adjust the margin as needed */
+    font-family: var(--font-family);
+    z-index: 4;
+}
+
+
+.responsive-div2 {
+    display: grid;
+    grid-template-columns: auto auto; /* Two columns */
+    gap: 5px; /* Adjust the gap between sections */
+    padding: 10px; /* Adjust the margin as needed */
+    background: #380C20;
+    background-color: #380C20;
+    font-family: var(--font-family);
+    
+}
+
+.section {
+    display: flex;
+    flex-direction: row; /* Items in rows */
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+}
+
+.section .image img {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    justify-content: center;
+    align-items: center;
+}
+
+.section .description {
+    flex: 1; /* Take remaining space */
+}
+
+.description{
+    font-size: 18px;
+}
+
+/* Add some spacing between image and description */
+.section .description p {
+    margin: 0;
+}
+
+.Families{
+    font-size: 18px;
+    color:white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #380C20;
+    font-family: var(--font-family);
+}
+
+.SanAm{
+    font-size: 50px;
+    color:white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background: #380C20;
+    font-family: var(--font-family);
+}
+
+.tinder, .tinder1 {
+width: 100vw;
+height: 100%;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+position: relative;
+opacity: 1;
+transition: opacity 0.1s ease-in-out;
+background-color: #380C20;
+font-family: var(--font-family);
+}
+.family {
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+    background-color: #380C20;
+    font-family: var(--font-family);
+    
+}
+
+.loaded.tinder {
+opacity: 1;
+}
+
+.tinder--status {
+position: absolute;
+top: 50%;
+margin-top: -30px;
+z-index: 2;
+width: 100%;
+text-align: center;
+pointer-events: none;
+}
+
+.tinder--status i {
+font-size: 100px;
+opacity: 0;
+-webkit-transform: scale(0.3);
+transform: scale(0.3);
+transition: all 0.2s ease-in-out;
+position: absolute;
+width: 100px;
+margin-left: -50px;
+}
+
+.tinder_love .fa-heart {
+opacity: 0.7;
+-webkit-transform: scale(1);
+transform: scale(1);
+}
+
+.tinder_nope .fa-remove {
+opacity: 0.7;
+-webkit-transform: scale(1);
+transform: scale(1);
+}
+
+.tinder--cards {
+flex-grow: 1;
+padding-top: 0px;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1;
+}
+
+.tinder--cards1 {
+flex-grow: 1;
+padding-top: 200px;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1;
+background-color: blue;
+}
+
+.tinder--card, .tinder--card1 {
+display: inline-block;
+width: 90vw;
+max-width: 800px;
+/* height: 70vh; */
+background: transparent;
+padding-bottom: 0px;
+border-radius: 8px;
+overflow: hidden;
+position: absolute;
+will-change: transform;
+transition: all 0.3s ease-in-out;
+cursor: -webkit-grab;
+cursor: grab;
+box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.67);
+background-color: #380C20;
+}
+
+.moving.tinder--card, .moving.tinder--card1 {
+transition: none;
+cursor: -webkit-grabbing;
+cursor: grabbing;
+}
+
+.tinder--card img, .tinder--card1 img {
+max-width: 100%;
+pointer-events: none;
+}
+
+.tinder--card h3, .tinder--card1 h3 {
+margin-top: 12px;
+font-size: 32px;
+padding: 0 6px;
+pointer-events: none;
+}
+
+.tinder--card p, .tinder--card1 p {
+margin-top: 24px;
+font-size: 20px;
+padding: 0 16px;
+pointer-events: none;
+}
+
+#resetButton,#resetButton1 {
+background-color: #380C20; /* Red background color */
+color: #fff; /* White text color */
+border: 1px solid rgba(255, 255, 255, 0.33);
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 100px;
+transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+
+#resetButton:hover {
+    background-color: #240814; /* Darker red color on hover */
+}
+
+/* Style for the venue div */
+/* .venue {
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background: #380C20; */
+    /* z-index: 2; Set a higher z-index value */
+/* } */
+
+
+
+
+.maps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #380C20;
+}
+
+/* Define the blinking animation */
+
+#eventVideo {
+    width: 100%;
+    max-height: 100%; /* Adjust the maximum height as needed */
+    object-fit: contain; /* Maintain aspect ratio and cover the container */
+    
+  }
+
+
+
+
+
+
+.events {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Vertically center-align all content */
+    text-align: center; /* Center-align text */
+    background-color: #380C20;
+
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+  }
+  
+  .profile-card {
+    display: flex;
+    align-items: center; /* Center-align profile card content */
+    margin: 10px; /* Add margin between profile cards */
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 60%;
+
+    background-color: wheat;
+    text-align: start;
+    color: #380C20;
+
+    font-size: 24px;
+
+    line-height: 24px;
+
+  }
+  
+  .profile-pic {
+    width: 130px; /* Adjust the size as needed */
+    height: 130px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the profile picture round */
+    margin-right: 20px; /* Add margin between picture and text */
+  }
+
+  .venue {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Vertically center-align all content */
+    text-align: center; /* Center-align text */
+    background-color: #380C20;
+
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: white;
+    /* padding: 10px; */
+    padding-top: 50px;
+    line-height: 18px;
+  }
+
+  .Venue_1{
+    font-family: var(--font-family);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #380C20;
+    padding: 0px;
+    line-height: 26px;
+}
+
+/* Add this CSS code for the Tinder-like swipe cards */
+/* 
+.profile-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Adjust the gap between profile cards */
+    /* padding: 20px; /* Add padding to separate the profile cards from the section above */
+    /* background-color: #380C20; */
+/* }
+
+.profile-card {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    /* margin: 20px; /* Add margin to separate the profile cards */
+    /* background-color: #380C20; */
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+    /* z-index: 1; Set a lower z-index value */
+/* } */
+
+
+/* .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes it circular */
+    /* object-fit: cover;
+    margin-right: 20px; */
+/* } */ 
+
+/* .profile-description { */
+    /* flex: 1; Take up the remaining space */
+/* } */
+
+@media screen and (max-width: 768px) {
+    #curtain-left, #curtain-right {
+        background-size: contain; /* Adjust as needed for mobile view */
+        background-position: center center; /* Center the background image */
+    }
+
+    #content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white; /* Set your desired webpage background color */
+        display: none;
+        z-index: 1;
+    }    
+    
+    .description{
+        font-size: 8px;
+    }
+
+    .tinder--card {
+        max-width: 400px;
+    }
+
+    .welcome-text{
+        font-size: 40px;
+    }
+
+    #navbar img {
+        width: 30px; /* Adjust the image size as needed */
+    }
+
+    #navbar span{
+        font-size: 20px;
+    }
+
+    #countdown-timer{
+        font-size: 18px;
+    }
+
+    .welcome-message p {
+
+        font-size: 18px;
+        
+        /* width: 70%; */
+    }
+
+    .welcome-text {
+
+        padding: 20px 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .profile-card {
+        width: 80%;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    .Venue_1{
+        font-size: 18px;
+    }   
+
+    .welcome-text {
+
+        width: 80%;
+    }
+
+    
+}
+
+
+section {
+    height: 1vh;
+    position:left;
+  }
+  /* #section-1 {
+    background-color: #2d8df8;
+  } */
+  a#scroll-btn {
+    position:absolute;
+    height: 3em;
+    width: 3em;
+    border: 0.1em solid #ffffff;
+    margin: auto;
+    left: 0;
+    right: -1.5;
+    bottom: 5em;
+    border-radius: 1em;
+  }
+  a#scroll-btn:before {
+    position: absolute;
+    content: "";
+    margin: auto;
+    left: 0;
+    right: 1;
+    top: 1em;
+    height: 1em;
+    width: 1em;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: move-down 2s infinite;
+  }
+  @keyframes move-down {
+    80% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(5.3em);
+      opacity: 0;
+    }
+  }
+  a#scroll-btn:after {
+    position: absolute;
+    content: "SCROLL DOWN";
+    width: 12em;
+    display: block;
+    width: 12em;
+    text-align: left;
+    left: 2;
+    right: 2;
+    bottom: -2.5em;
+    font-size: 1em;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+
+
+
+
